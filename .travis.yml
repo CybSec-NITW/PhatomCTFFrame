@@ -11,3 +11,10 @@ install:
 script:
  - docker run -d -p 80:80 -p 443:443 --name="fbctf_in_travis" fbctf_in_travis
  - docker exec fbctf_in_travis /var/www/fbctf/extra/run_tests.sh /var/www/fbctf/
+ 
+ deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  on:
+   branch: master
