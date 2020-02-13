@@ -12,7 +12,13 @@ script:
  - docker run -d -p 80:80 -p 443:443 --name="fbctf_in_travis" fbctf_in_travis
  - docker exec fbctf_in_travis /var/www/fbctf/extra/run_tests.sh /var/www/fbctf/
  
+
 deploy:
-  provider: netlify
-  auth: 7dea8075f3cb65457cfc75ef82ad18c707348c3e3f912ae3d42016eee5aef6e3
-  edge: true 
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  repo: https://github.com/CybSec-NITW/PhatomCTFFrame
+  target-branch: master
+  verbose: true
+  on:
+    branch: master
