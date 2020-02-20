@@ -3,7 +3,7 @@
 /* HH_IGNORE_ERROR[1002] */
 $translations = array(
   'date and time format' =>
-    'H:i:s D m/d/Y', //used by date() function
+    'H:i:s D d/m/Y', //used by date() function
   //Translations for IndexController
   'Facebook CTF' =>
     'Facebook CTF',
